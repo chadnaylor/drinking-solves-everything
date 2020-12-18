@@ -3,7 +3,7 @@ describe("Home page", () => {
     cy.visit('/')
   })
   it("header contains problems heading with a message that there are no problems", () => {
-    cy.get('.App-header').should('contain', 'My Problems')
+    cy.get('.Problems-header').should('contain', 'Problems List')
     cy.get('p').should('contain', 'There are no problems to list.')
   })
 
@@ -25,11 +25,11 @@ describe("Home page", () => {
   it("displays a problem name under the 'My Problems' heading after it has been added through the 'Add Problem' form", () => {
     const addProblemButton = cy.get('#add-problem')
     addProblemButton.click().then(() => {
-      cy.get('input[name="newProblemName"]').type("Tofu Scramble Tacos")
-      cy.get('textarea[name="newProblemInstructions"]').type("1. heat a skillet on medium with a dollop of coconut oil {enter} 2. warm flour tortillas")
+      cy.get('input[name="newProblemName"]').type("Fighting at home")
+      cy.get('textarea[name="newProblemInstructions"]').type("My wife is annoying")
       cy.get('input[type="submit"]').click()
       cy.get('ul').then(() => {
-        cy.get('ul').contains("Tofu Scramble Tacos")
+        cy.get('ul').contains("Fighting at home")
       })
     })
   })
