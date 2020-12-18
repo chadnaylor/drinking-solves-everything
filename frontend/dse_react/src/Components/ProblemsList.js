@@ -28,6 +28,17 @@ class ProblemsList extends React.Component {
             ]
         })
     }
+
+    async componentDidMount() {
+        try {
+            const result = await fetch('')
+            const problems = await result.json()
+            this.setState({ problems })
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
     render() {
         const addNewProblemForm = (
             <form id="problem-form" onSubmit={this.submitProblem}>
@@ -50,10 +61,11 @@ class ProblemsList extends React.Component {
                         ? addNewProblemForm
                         : <button id="add-problem" onClick={this.toggleAddProblemForm}>Add Problem</button>
                 }
+
                 {
                     this.state.problems.length > 0 ?
                         <ul>
-                            <li>{this.state.problems[0].name}</li>
+                            {this.state.problems.map((problem) => <li key={problem.id}>{problem.name}</li>)}
                         </ul> :
                         <p>There are no problems to list.</p>
                 }
