@@ -3,13 +3,17 @@ import { shallow } from 'enzyme'
 import Cookie from 'js-cookie'
 import Age from './Age'
 
-test('it adds age cookie if user clicks yes', () => {
+test('addAgeCookie adds age cookie', () => {
     jest.mock('js-cookie', () => jest.fn())
-    Cookie.get = () => undefined
-    const spyGetCookie = jest.spyOn(Cookie, "get")
+    const cookies = {}
+    Cookie.get = () => cookies
+    Cookie.set = (cookie,value) => cookies[cookie] = value
+    const spySetCookie = jest.spyOn(Cookie, "set")
     const wrapper = shallow(<Age />, { disableLifecycleMethods: true })
-    const didMount = wrapper.instance().componentDidMount();
-    expect(spyDidMount).toHaveBeenCalled();
+    wrapper.instance().addAgeCookie();
+
     wrapper.update();
-    expect(spyGetCookie).toHaveBeenCalled();
+    expect(spySetCookie).toHaveBeenCalled();
+    expect(cookies.legalAge).toBeDefined()
+
 })
