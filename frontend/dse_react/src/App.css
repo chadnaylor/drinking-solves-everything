@@ -7,8 +7,17 @@
 ?*/
 .App {
   text-align: center;
+  background-image: frontend/dse_react/src/Media/backdrop;
 }
 
 .App-header{
   background-color: #99582aff;
+  color: #ffe6a7ff;
+  padding: 2em;
+  text-align: left;  
+  font-style: italic;
+  font-weight: bold;
+}
+.ProblemsList{
+  margin: 2em;
 }
