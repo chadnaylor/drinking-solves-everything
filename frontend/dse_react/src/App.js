@@ -4,9 +4,7 @@ import React from 'react'
 import { Route, BrowserRouter, Switch, Link } from 'react-router-dom';
 import Cookie from 'js-cookie'
 import Age from './Components/Age'
-import { createBrowserHistory } from "history";
-
-export const history = createBrowserHistory({ forceRefresh: true });
+import history from './Components/BrowserHistory'
 
 class App extends React.Component {
 
