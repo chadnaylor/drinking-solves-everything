@@ -18,6 +18,7 @@ class Age extends React.Component {
                     
                     <button className='legalAgeButton' onClick={()=>this.addAgeCookie()}>Yes</button>
                 </div>
+                
             </div>)
     }
 }

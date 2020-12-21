@@ -4,7 +4,9 @@ import './ProblemsList.css'
 class ProblemsList extends React.Component {
     state = {
         isAddProblemFormDisplayed: false,
-        problems: [],
+        problems: [
+            { name: "wife", instructions: "leave her for a younger woman" },
+            { name: "dog", instruction: "take your dog to the vet!" }],
         newProblemName: "",
         newProblemInstructions: ""
     }
@@ -45,38 +47,45 @@ class ProblemsList extends React.Component {
             <form id="problem-form" onSubmit={this.submitProblem}>
                 <label htmlFor="newProblemName">Problem name: </label>
                 <input type="text" name="newProblemName" onChange={this.handleChange} value={this.state.newProblemName} />
-                <div/>
+                <div />
                 <label htmlFor="newProblemInstructions">Instructions:</label>
                 <textarea name="newProblemInstructions"
                     placeholder="write problem instructions here..."
                     onChange={this.handleChange}
                     value={this.state.newProblemInstructions} />
-                <div/>    
+                <div />
                 <input id="submitProblem" type="submit" />
             </form>
         )
 
+        const updateProblem = (name) => {
+            this.setState({...this.state, newProblemName: name});
+            //{ alert(this.state.newProblemName) };
+        }
+
         return (
             <div className="ProblemContainer">
-            <div className="ProblemsList">
-                <h1 className="Problems-header">Problems List</h1>
-                
-
-                {
-                    this.state.problems.length > 0 ?
-                        <ul>
-                            {this.state.problems.map((problem) => <li key={problem.id}>{problem.name}</li>)}
-                        </ul> :
-                        <p>There are no problems to list.</p>
-                }
-                {
-                    this.state.isAddProblemFormDisplayed
-                        ? addNewProblemForm
-                        : <button id="add-problem" onClick={this.toggleAddProblemForm}>Add Problem</button>
-                }
-            </div>
-            <div className="ProblemsList">
-                <h1 className="Problems-header">I am a filler card</h1>
+                <div className="ProblemsList">
+                    <h1 className="Problems-header">Problems List</h1>
+                    {
+                        this.state.problems.length > 0 ?
+                            <ul>
+                                {this.state.problems.map((problem) => <li key={problem.id} onClick={() => updateProblem(problem.name)}>{problem.name}</li>)}
+                            </ul> :
+                            <p>There are no problems to list.</p>
+                    }
+                    {
+                        this.state.isAddProblemFormDisplayed
+                            ? addNewProblemForm
+                            : <button id="add-problem" onClick={this.toggleAddProblemForm}>Add Problem</button>
+                    }
+                </div>
+                <div className={`ProblemsList ProblemDetail`}>
+                    {
+                        this.state.newProblemName === "" ?
+                            <h1 className="Problems-header">'Select a problem to see drink recommendations!!! :P '</h1> :
+                            <h1 className="Problems-header">{this.state.newProblemName}</h1>
+                    }
                 </div>
             </div>
         )
