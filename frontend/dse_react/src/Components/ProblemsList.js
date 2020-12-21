@@ -1,4 +1,5 @@
 import React from 'react'
+import './ProblemsList.css'
 
 class ProblemsList extends React.Component {
     state = {
@@ -44,23 +45,22 @@ class ProblemsList extends React.Component {
             <form id="problem-form" onSubmit={this.submitProblem}>
                 <label htmlFor="newProblemName">Problem name: </label>
                 <input type="text" name="newProblemName" onChange={this.handleChange} value={this.state.newProblemName} />
+                <div/>
                 <label htmlFor="newProblemInstructions">Instructions:</label>
                 <textarea name="newProblemInstructions"
                     placeholder="write problem instructions here..."
                     onChange={this.handleChange}
                     value={this.state.newProblemInstructions} />
-                <input type="submit" />
+                <div/>    
+                <input id="submitProblem" type="submit" />
             </form>
         )
 
         return (
+            <div className="ProblemContainer">
             <div className="ProblemsList">
                 <h1 className="Problems-header">Problems List</h1>
-                {
-                    this.state.isAddProblemFormDisplayed
-                        ? addNewProblemForm
-                        : <button id="add-problem" onClick={this.toggleAddProblemForm}>Add Problem</button>
-                }
+                
 
                 {
                     this.state.problems.length > 0 ?
@@ -69,6 +69,15 @@ class ProblemsList extends React.Component {
                         </ul> :
                         <p>There are no problems to list.</p>
                 }
+                {
+                    this.state.isAddProblemFormDisplayed
+                        ? addNewProblemForm
+                        : <button id="add-problem" onClick={this.toggleAddProblemForm}>Add Problem</button>
+                }
+            </div>
+            <div className="ProblemsList">
+                <h1 className="Problems-header">I am a filler card</h1>
+                </div>
             </div>
         )
 

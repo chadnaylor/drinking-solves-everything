@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Cookie from 'js-cookie'
 import history from './BrowserHistory'
+import './Age.css'
 class Age extends React.Component {
     
     addAgeCookie=() =>  {
@@ -10,15 +11,15 @@ class Age extends React.Component {
 
     render() {
         return (
-        <>
-            <div className='Age-header'>Are you over 21?</div>
-            <button className='notLegalAgeButton'>No</button>
-            <div/>
-            <button className='legalAgeButton' onClick={()=>this.addAgeCookie()}>Yes</button>
-
-            
-        </>)
+            <div className="ageWrap">
+                <div className="ageCard">
+                    <div className='ageHeader'>Are you over 21?</div>
+                    <button className='notLegalAgeButton' onClick={()=>window.location.replace("https://www.kizi.com/kids")}>No</button>
+                    
+                    <button className='legalAgeButton' onClick={()=>this.addAgeCookie()}>Yes</button>
+                </div>
+            </div>)
     }
 }
 
-export default Age
+export default Age;

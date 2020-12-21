@@ -7,7 +7,9 @@
 ?*/
 .App {
   text-align: center;
-  background-image: frontend/dse_react/src/Media/backdrop;
+  background-image: url('./Media/backdrop.jpeg');
+  height: 100vh;
+  
 }
 
 .App-header{
@@ -20,4 +22,5 @@
 }
 .ProblemsList{
   margin: 2em;
+
 }

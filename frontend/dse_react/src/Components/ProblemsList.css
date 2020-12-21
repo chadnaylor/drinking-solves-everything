@@ -1,0 +1,58 @@
+.ProblemContainer{
+    display: grid;
+    grid-template-columns: .8fr .8fr;
+    grid-template-rows: 1fr;
+    
+    height: 90%
+}
+
+.ProblemsList{
+    display: grid;
+    grid-template-rows: 20px .8fr 10px;
+    width: 80%;
+    background-color: #99582aff;
+    margin: 2em;
+    color: #ffe6a7ff;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+    box-shadow: 0 0 25px -5px #000000;
+    border-radius: 4px;    
+}
+.Problems-header{
+    justify-content: center;
+    color: #ffe6a7ff;
+    font-size: x-large;
+}
+
+#add-problem {
+    background-color: #bb9457ff;
+    float : right;
+    bottom: 1px;
+    padding: 9px 32px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    color: #432818ff;
+    transition-duration: 0.4s;  
+}
+
+#problem-form {
+    background-color: #bb9457ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 3px 12px;
+    margin-bottom: 0.1px;
+    float : right;
+}
+
+#submitProblem{
+    background-color: #bb9457ff;
+    float: center;
+    padding: 9px 40px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    color: #432818ff;
+    
+}
