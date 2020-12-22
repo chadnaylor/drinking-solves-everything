@@ -1,0 +1,26 @@
+/* I am the color scheme!
+--persian-plum: #6f1d1bff;  <--special color, maybe buttons? Alerts?
+--camel: #bb9457ff;         <--background card 
+--bistre: #432818ff;        <--text, button color and graphics
+--windsor-tan: #99582aff;   <--card body
+--banana-mania: #ffe6a7ff;  <--unknown, maybe upload image background color?
+?*/
+.App {
+  text-align: center;
+  background-image: url('./Media/backdrop.jpeg');
+  height: 100vh;
+  
+}
+
+.App-header{
+  background-color: #99582aff;
+  color: #ffe6a7ff;
+  padding: 2em;
+  text-align: left;  
+  font-style: italic;
+  font-weight: bold;
+}
+.ProblemsList{
+  margin: 2em;
+
+}
