@@ -40,7 +40,7 @@ class ProblemsList extends React.Component {
 
     async componentDidMount() {
         try {
-            const result = await fetch('')
+            const result = await fetch('http://localhost:3001/problems')
             const problems = await result.json()
             this.setState({ problems })
         } catch (e) {
