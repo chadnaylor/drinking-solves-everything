@@ -31,20 +31,28 @@
     text-align: left;
     font-size: larger;    
 }
+.specialList{
+    padding-bottom: 16px;
+}
 .ProblemDetail{
     display: grid;
     grid-template-columns: 80%;
-    grid-template-rows: 20px 30% 20% 45%;
+    grid-template-rows: 2px 100px 10px 20px 20px 10px 80px 80px 300px;
     color: #432818ff;
 }
-
+h3{
+    padding: 16px;
+    text-align: center;
+}
+p{
+    margin: 0%;
+}
 .Problems-header{
     justify-content: center;
     text-align: center;
     color: #432818ff;
     font-size: x-large;
 }
-
 
 #add-problem {
     background-color: #99582aff;

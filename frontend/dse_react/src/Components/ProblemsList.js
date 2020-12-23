@@ -14,7 +14,8 @@ class ProblemsList extends React.Component {
         newProblemDescription: "",
         targetProblemName: "",
         targetProblemDescription: "",
-        targetProblemDrink: "temp"
+        targetProblemDrink: "temp",
+        drink: ""
     }
     handleChange = (event) => {
         const target = event.target;
@@ -56,7 +57,18 @@ class ProblemsList extends React.Component {
         }
 
     }
+    async updateProblem(problem) {
+        this.setState({
+            ...this.state,
+            targetProblemName: problem.name,
+            targetProblemDrink: problem.drink,
+            targetProblemDescription: problem.description
+        });
 
+        const result = await fetch('http://localhost:3001/random')
+        const drink = await result.json()
+        this.setState({ ...this.state, drink })
+    }
     async componentDidMount() {
         try {
             const result = await fetch('http://localhost:3001/problems')
@@ -84,15 +96,7 @@ class ProblemsList extends React.Component {
             </form>
         )
 
-        const updateProblem = (problem) => {
-            this.setState({
-                ...this.state,
-                targetProblemName: problem.name,
-                targetProblemDrink: problem.drink,
-                targetProblemDescription: problem.description
-            });
 
-        }
 
         return (
             <div className="ProblemContainer">
@@ -100,10 +104,10 @@ class ProblemsList extends React.Component {
                     <h1 className="Problems-header">Problems List</h1>
                     {
                         this.state.problems.length > 0 ?
-                            <ul>
+                            <ul >
                                 {this.state.problems.map((problem) =>
-                                    <li key={problem.id} onClick={() =>
-                                        updateProblem(problem)}>{problem.name}</li>)}
+                                    <li className="specialList" key={problem.id} onClick={() =>
+                                        this.updateProblem(problem)}>{problem.name}</li>)}
                             </ul> :
                             <p>There are no problems to list.</p>
                     }
@@ -117,21 +121,39 @@ class ProblemsList extends React.Component {
                 <div className={`ProblemsList ProblemDetail`}>
                     {
                         this.state.targetProblemName === "" ?
-                            <h1 className="Problems-header">'Select a problem to see drink recommendations!!! :P '</h1> :
+                            <h1 className="Problems-header">Select a problem</h1> :
                             <>
                                 <h1 className="Problems-header">{this.state.targetProblemName}</h1>
-                                <p className="Problem-description">{this.state.targetProblemDescription}</p>
+                                <p className="Problem-description"><strong>Problem:</strong> {this.state.targetProblemDescription}</p>
                                 <p className="Problem-drink">{this.state.targetProblemDrink}</p>
-                                
+                                {this.state.drink !== null ?
+                                    <>
+                                        <h3>Your Solution:</h3>
+                                        <div/>
+                                        <p><strong>Cocktail:</strong> {this.state.drink.name}</p>
+                                        {this.state.drink.ingredients ?
+                                            <>
+                                                <p>Ingredients:</p>
+                                                <ul>
+                                                    {this.state.drink.ingredients.map(ing => <li>{ing}</li>)}
+                                                </ul>
+                                            </> : <p>No ingredients</p>
+                                        }
+                                        <p>{this.state.drink.instructions}</p>
+
+
+                                    </> :
+                                    <p>No drink</p>
+                                }
                             </>
                     }
                 </div>
-            </div>
 
+            </div>
         )
 
     }
-
 }
+
 
 export default ProblemsList

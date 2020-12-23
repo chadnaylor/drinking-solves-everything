@@ -1,0 +1,45 @@
+Problem Statement 
+		Nothing is worse than not knowing what to drink. Our project helps you have the right drink for the right occasion. 
+
+The person you are delivering for 
+	Our company is delivering this product to the working man/woman/it 
+    that has a hard time picking the right drink. Our customer wants a 
+    solution to save time and get the ideal alcoholic effect for the occasion.
+
+A demo of all features
+    -Show off TDD (demonstrate the test we implemented and)
+    -Demo age page if yes here is a cookie if no go play little kid games you underage loser.
+    -Demo Problems page (problem selection, add problem, drink popup/side bar)
+    -retrival of solution (Yay! problem may not be "fixed" but you can definetly cope with it now)
+    
+Technologies used
+    React (Used for the front end of our app)
+    Css    (Implemented many css features)
+    SQL lite (helps us use it on any machine. It is a light weight app. Great for local database. cons : slow with a lot of data.)
+    Cypress
+    Knex
+    Implimented stocastic drink matching analytics system
+    TDD the Sh!@ out of our app (Our app consentrated on TDD beofor creating features.
+                                 we recognized the importance of having a good foundation
+                                 before implimenting features.)
+
+Any obstacles - technical or otherwise - the group faced    
+    Our group faced many obstacles while creating this application. We had to overcome many
+    learning hurdles while testing our app. We also had plenty of issues setting up our database. 
+    We had to work around this problem and us SQL lite. We also encountered plenty of small issues
+    during our development process. We had o experiment with CSS features and also with cookies. All these
+    "roadblockes" only helped with furthering our knowledge. 
+
+
+Positive Takeaways
+    When we began development of our app we had very high expectations for what we would do. While you
+    you see before you a rough sketch of those ideas rendered on the screen before you, we soon realized 
+    that four and half days would not be enough time to bring you the full functionality we desired. Routinely 
+    our lead developer had to stop the inevitable urge of scope creep that attempted to infiltrate our 
+    programming experience. Also, when programing out specific features we learned that not everything will
+    be simple, cut and dry. Items that we had all programmed before could interact with other parts of our code 
+    in ways that broke our script setting us off on a mad scramble to troubleshoot. However, perserverance and our 
+    team dynamic came back again and again to result in success. Unanimously we all agree that our group worked
+    very well together. Even when we became frustrated at the code we never took it out on each other and continued 
+    focus on the task at hand. Ultimatly, this project resulted in the true nature and goal of this progect being 
+    achieved. We all learned and grew as programmers. 

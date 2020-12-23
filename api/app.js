@@ -20,7 +20,7 @@ var drinks = drinks_seed.drinks.map(drink => {
     }
     return {
         name: drink.strDrink,
-        instructions: drink.strInstructions,
+        instructions: (drink.strInstructions.substring(0,500)),
         picture: drink.strDrinkThumb,
         ingredients: ingredients
     }
