@@ -29,9 +29,15 @@
     border-style: solid;
     border-width: 32px;
     text-align: left;
-    font-size: larger;
-    
+    font-size: larger;    
 }
+.ProblemDetail{
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: 20px 30% 20% 45%;
+    color: #432818ff;
+}
+
 .Problems-header{
     justify-content: center;
     text-align: center;
